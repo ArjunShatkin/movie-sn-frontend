@@ -9,7 +9,7 @@ function About() {
         <div className="card-body">
           <h3>Team Members</h3>
           <ul>
-            <li><strong>Your Name</strong> - Section XX</li>
+            <li><strong>Arjun Shatkin</strong> - CS4550</li>
             {/* Add more team members here */}
           </ul>
 
@@ -17,14 +17,14 @@ function About() {
           <ul>
             <li>
               <strong>Frontend:</strong>{' '}
-              <a href="https://github.com/YOUR_USERNAME/movie-sn-frontend" target="_blank" rel="noopener noreferrer">
-                github.com/YOUR_USERNAME/movie-sn-frontend
+              <a href="https://github.com/ArjunShatkin/movie-sn-frontend" target="_blank" rel="noopener noreferrer">
+                github.com/ArjunShatkin/movie-sn-frontend
               </a>
             </li>
             <li>
               <strong>Backend:</strong>{' '}
-              <a href="https://github.com/YOUR_USERNAME/movie-sn-backend" target="_blank" rel="noopener noreferrer">
-                github.com/YOUR_USERNAME/movie-sn-backend
+              <a href="https://github.com/ArjunShatkin/movie-sn-backend" target="_blank" rel="noopener noreferrer">
+                github.com/ArjunShatkin/movie-sn-backend
               </a>
             </li>
           </ul>
