@@ -62,7 +62,7 @@ function App() {
       <div className="App">
         {/* Navigation */}
         <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
-          <div className="container">
+        <div className="container-fluid">
             <Link className="navbar-brand" to="/">🎬 Movie Social Network</Link>
             <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
               <span className="navbar-toggler-icon"></span>

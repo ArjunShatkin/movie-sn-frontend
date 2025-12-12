@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 
@@ -9,6 +9,18 @@ function Search() {
   const [movies, setMovies] = useState([]);
   const [loading, setLoading] = useState(false);
   const [searched, setSearched] = useState(false);
+
+  // Load saved search results on mount
+  useEffect(() => {
+    const savedQuery = localStorage.getItem('searchQuery');
+    const savedResults = localStorage.getItem('searchResults');
+    
+    if (savedQuery && savedResults) {
+      setQuery(savedQuery);
+      setMovies(JSON.parse(savedResults));
+      setSearched(true);
+    }
+  }, []);
 
   const handleSearch = async (e) => {
     e.preventDefault();
@@ -23,7 +35,12 @@ function Search() {
       });
 
       if (response.data.success) {
-        setMovies(response.data.results);
+        const results = response.data.results;
+        setMovies(results);
+        
+        // Save to localStorage
+        localStorage.setItem('searchQuery', query);
+        localStorage.setItem('searchResults', JSON.stringify(results));
       }
       setLoading(false);
     } catch (err) {
@@ -33,7 +50,7 @@ function Search() {
   };
 
   return (
-    <div className="container mt-5">
+    <div className="container-fluid mt-5">
       <h1 className="text-center mb-4">Search Movies</h1>
 
       {/* Search Form */}
